@@ -1,6 +1,7 @@
 const osc = require('node-osc');
 const config = require('../config/config');
 const oscServer = new osc.Server(config.server.port, config.server.host);
+console.log(config.server.port)
 const client = new osc.Client(config.client.host, config.client.port);
 const Page1 = require('./page1');
 const page1 = new Page1(client);
