@@ -23,6 +23,9 @@
   socket.on('disconnect', function(){
   	//console.log('disconnect')
   });
+  socket.on('hello', function(data) {
+    console.log(data)
+  })
 
   // Setup faders
   socket.on('fader1', function(data){
