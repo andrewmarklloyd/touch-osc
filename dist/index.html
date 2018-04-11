@@ -14,6 +14,19 @@
   <div id="fader5" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 
+<div id="toggle1" class="card" style="width: 6rem;">
+  <div class="card-body"/>
+</div>
+<div id="toggle2" class="card" style="width: 6rem;">
+  <div class="card-body"/>
+</div>
+<div id="toggle3" class="card" style="width: 6rem;">
+  <div class="card-body"/>
+</div>
+<div id="toggle4" class="card" style="width: 6rem;">
+  <div class="card-body"/>
+</div>
+
 <script src="/socket.io.js"></script>
 <script>
   var socket = io();
@@ -49,16 +62,16 @@
   });
 
   socket.on('toggle1', function(data){
-    console.log('toggle1', data)
+    document.getElementById('toggle1').style = `width: 6rem; background-color: ${data ? 'gray' : 'white'};`;
   });
   socket.on('toggle2', function(data){
-    console.log('toggle2', data)
+    document.getElementById('toggle2').style = `width: 6rem; background-color: ${data ? 'gray' : 'white'};`;
   });
   socket.on('toggle3', function(data){
-    console.log('toggle3', data)
+    document.getElementById('toggle3').style = `width: 6rem; background-color: ${data ? 'gray' : 'white'};`;
   });
   socket.on('toggle4', function(data){
-    console.log('toggle4', data)
+    document.getElementById('toggle4').style = `width: 6rem; background-color: ${data ? 'gray' : 'white'};`;
   });
 </script>
 
