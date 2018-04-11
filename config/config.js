@@ -6,12 +6,9 @@ const config = {
     host: process.env.CLIENT_HOST,
     port: process.env.CLIENT_PORT
   },
-  osc: {
-    host: process.env.OSC_HOST,
-    port: process.env.OSC_PORT
-  },
-  express: {
-  	port: process.env.EXPRESS_PORT
+  server: {
+    host: process.env.SERVER_HOST,
+  	port: process.env.SERVER_PORT
   }
 };
 
