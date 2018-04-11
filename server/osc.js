@@ -7,7 +7,6 @@ const Page1 = require('./page1');
 const page1 = new Page1(client);
 
 oscServer.on('message', function (message, rinfo) {
-	console.log(message)
 	switch (message[0].substring(0,2)) {
 		case '/1':
 			page1.newMessage(message);
