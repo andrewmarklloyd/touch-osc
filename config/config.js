@@ -7,8 +7,8 @@ const config = {
     port: process.env.CLIENT_PORT
   },
   server: {
-    host: process.env.SERVER_HOST,
-  	port: process.env.SERVER_PORT
+    host: process.env.HOST,
+  	port: process.env.PORT
   }
 };
 
