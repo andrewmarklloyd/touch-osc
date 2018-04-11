@@ -1,9 +1,18 @@
-<p id="fader1"></p>
-<p id="fader2"></p>
-<p id="fader3"></p>
-<p id="fader4"></p>
-<p id="fader5"></p>
-
+<div class="progress">
+  <div id="fader1" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress">
+  <div id="fader2" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress">
+  <div id="fader3" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress">
+  <div id="fader4" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress">
+  <div id="fader5" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
 
 <script src="/socket.io.js"></script>
 <script>
@@ -17,22 +26,24 @@
 
   // Setup faders
   socket.on('fader1', function(data){
-    document.getElementById('fader1').innerHTML = data
+    document.getElementById('fader1').style = `width: ${Math.floor(data * 100)}%`;
   });
 
   socket.on('fader2', function(data){
-    document.getElementById('fader2').innerHTML = data
+    document.getElementById('fader2').style = `width: ${Math.floor(data * 100)}%`;
   });
 
   socket.on('fader3', function(data){
-    document.getElementById('fader3').innerHTML = data
+    document.getElementById('fader3').style = `width: ${Math.floor(data * 100)}%`;
   });
 
   socket.on('fader4', function(data){
-    document.getElementById('fader4').innerHTML = data
+    document.getElementById('fader4').style = `width: ${Math.floor(data * 100)}%`;
   });
 
   socket.on('fader5', function(data){
-    document.getElementById('fader5').innerHTML = data
+    document.getElementById('fader5').style = `width: ${Math.floor(data * 100)}%`;
   });
 </script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
