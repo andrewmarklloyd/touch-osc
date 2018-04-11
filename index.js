@@ -1,6 +1,7 @@
 const osc = require('node-osc');
 const page1 = require('./page1');
-const oscServer = new osc.Server(3000, '0.0.0.0');
+const config = require('./config');
+const oscServer = new osc.Server(config.server.port, config.server.host);
 
 oscServer.on('message', function (message, rinfo) {
 	switch (message[0].substring(0,2)) {

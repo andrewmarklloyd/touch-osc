@@ -1,0 +1,24 @@
+{
+  "name": "touch-osc",
+  "version": "1.0.0",
+  "description": "Toy project to control my Mac using the [TouchOSC](https://itunes.apple.com/us/app/touchosc/id288120394?mt=8) iOS app.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewmarklloyd/touch-osc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewmarklloyd/touch-osc/issues"
+  },
+  "homepage": "https://github.com/andrewmarklloyd/touch-osc#readme",
+  "dependencies": {
+    "applescript": "^1.0.0",
+    "dotenv": "^5.0.1",
+    "node-osc": "^2.1.0"
+  }
+}

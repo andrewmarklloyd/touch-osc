@@ -1,6 +1,7 @@
-const osc = require('node-osc');
-const client = new osc.Client('172.20.10.2', 3333);
 const applescript = require('applescript');
+const osc = require('node-osc');
+const config = require('./config');
+const client = new osc.Client(config.client.host, config.client.port);
 
 function newMessage(message) {
 	if (message[0].indexOf('/1/fader') == 0) {
