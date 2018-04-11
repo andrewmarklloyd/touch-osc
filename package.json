@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/andrewmarklloyd/touch-osc#readme",
   "dependencies": {
-    "applescript": "^1.0.0",
     "dotenv": "^5.0.1",
+    "express": "^4.16.3",
     "node-osc": "^2.1.0"
   }
 }

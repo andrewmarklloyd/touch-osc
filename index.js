@@ -1,18 +1,14 @@
-const osc = require('node-osc');
-const page1 = require('./page1');
-const config = require('./config');
-const oscServer = new osc.Server(config.server.port, config.server.host);
+// config should be imported before importing any other file
+const config = require('./config/config');
+const app = require('./config/express');
+const osc = require('./server/osc');
 
-oscServer.on('message', function (message, rinfo) {
-	switch (message[0].substring(0,2)) {
-		case '/1':
-			page1.newMessage(message);
-			break;
-		case '/2':
-			break;
-		case '/3':
-			break;
-		case '/4':
-			break;
-	}
+app.listen(config.express.port, () => {
+  console.log('Server started on', config.express.port)
 });
+
+app.get('/', function(req, res){
+	res.json({hello: 'world'});
+})
+
+module.exports = { app };
