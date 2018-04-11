@@ -37,9 +37,8 @@ Page1.prototype.fader = function (message) {
 }
 
 Page1.prototype.toggle = function (message) {
-	if (message[0] == '/1/toggle1') {
-		
-	}
+	const toggleType = message[0].substring(3, message[0].length);
+	this.observer.next({type: toggleType, data: message[1]})
 }
 
 Page1.prototype.register = function(){

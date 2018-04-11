@@ -47,6 +47,19 @@
   socket.on('fader5', function(data){
     document.getElementById('fader5').style = `width: ${Math.floor(data * 100)}%`;
   });
+
+  socket.on('toggle1', function(data){
+    console.log('toggle1', data)
+  });
+  socket.on('toggle2', function(data){
+    console.log('toggle2', data)
+  });
+  socket.on('toggle3', function(data){
+    console.log('toggle3', data)
+  });
+  socket.on('toggle4', function(data){
+    console.log('toggle4', data)
+  });
 </script>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
