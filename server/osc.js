@@ -23,7 +23,7 @@ oscServer.on('message', function (message, rinfo) {
 });
 
 module.exports = {
-	getFaderCount: function(){
-		return page1.getFaderCount();
+	registerFaderCount: function(){
+		return page1.registerFaderCount();
 	}
 }

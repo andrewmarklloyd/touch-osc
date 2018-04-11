@@ -19,6 +19,8 @@
   "dependencies": {
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
-    "node-osc": "^2.1.0"
+    "node-osc": "^2.1.0",
+    "rxjs": "^5.5.9",
+    "socket.io": "^2.1.0"
   }
 }

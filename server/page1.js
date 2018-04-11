@@ -1,9 +1,14 @@
 const osc = require('node-osc');
+const Observable = require('rxjs/Observable').Observable;
 
 var faderCount = 0;
 
 var Page1 = function(client) {
+	var self = this;
 	this.client = client;
+	this.faderObservable = Observable.create((observer) => {
+		this.faderObserver = observer;
+	});
 }
 
 Page1.prototype.newMessage = function(message) {
@@ -30,6 +35,7 @@ Page1.prototype.fader = function (message) {
 	if (message[0] == '/1/fader5') {
 		this.sendOscMessage('/1/toggle1', ['0']);
 		faderCount++;
+		this.faderObserver.next(faderCount)
 	}
 }
 
@@ -39,8 +45,8 @@ Page1.prototype.toggle = function (message) {
 	}
 }
 
-Page1.prototype.getFaderCount = function(){
-	return faderCount;
+Page1.prototype.registerFaderCount = function(){
+	return this.faderObservable;
 }
 
 module.exports = Page1
