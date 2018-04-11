@@ -8,7 +8,7 @@ app.listen(config.express.port, () => {
 });
 
 app.get('/', function(req, res){
-	res.json({hello: 'world'});
+	res.json({faderCount: osc.getFaderCount()});
 })
 
 module.exports = { app };

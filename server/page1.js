@@ -1,5 +1,7 @@
 const osc = require('node-osc');
 
+var faderCount = 0;
+
 var Page1 = function(client) {
 	this.client = client;
 }
@@ -27,6 +29,7 @@ Page1.prototype.sendOscMessage = function (address, messages) {
 Page1.prototype.fader = function (message) {
 	if (message[0] == '/1/fader5') {
 		this.sendOscMessage('/1/toggle1', ['0']);
+		faderCount++;
 	}
 }
 
@@ -34,6 +37,10 @@ Page1.prototype.toggle = function (message) {
 	if (message[0] == '/1/toggle1') {
 		
 	}
+}
+
+Page1.prototype.getFaderCount = function(){
+	return faderCount;
 }
 
 module.exports = Page1

@@ -21,3 +21,9 @@ oscServer.on('message', function (message, rinfo) {
 			break;
 	}
 });
+
+module.exports = {
+	getFaderCount: function(){
+		return page1.getFaderCount();
+	}
+}
