@@ -13,6 +13,6 @@ osc.register().subscribe(data => {
 	io.emit(data['type'], data.data);
 })
 
-osc.registerPing().subscribe(() => {
-	console.log('ping')
+osc.registerPing().subscribe((ping) => {
+	io.emit('ping', ping);
 })

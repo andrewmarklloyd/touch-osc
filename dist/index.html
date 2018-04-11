@@ -36,8 +36,8 @@
   socket.on('disconnect', function(){
   	//console.log('disconnect')
   });
-  socket.on('hello', function(data) {
-    console.log(data)
+  socket.on('ping', function(ping) {
+    console.log(ping)
   })
 
   // Setup faders

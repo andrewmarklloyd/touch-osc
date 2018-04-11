@@ -23,7 +23,7 @@ var OscInterface = function(client) {
 			case '/4':
 				break;
 			case '/p':
-				pingObserver.next()
+				pingObserver.next('ping')
 				break;
 		}
 	});
