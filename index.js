@@ -12,8 +12,8 @@ io.on('connection', function(socket){
 	io.emit('faderCount', { data: 0 });
 });
 
-osc.registerFaderCount().subscribe(d => {
-	io.emit('faderCount', { data: d });
+osc.register().subscribe(data => {
+	io.emit(data['type'], data.data);
 })
 
 var distDir = __dirname + "/dist/";

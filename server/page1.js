@@ -6,8 +6,8 @@ var faderCount = 0;
 var Page1 = function(client) {
 	var self = this;
 	this.client = client;
-	this.faderObservable = Observable.create((observer) => {
-		this.faderObserver = observer;
+	this.observable = Observable.create((observer) => {
+		this.observer = observer;
 	});
 }
 
@@ -34,8 +34,7 @@ Page1.prototype.sendOscMessage = function (address, messages) {
 Page1.prototype.fader = function (message) {
 	if (message[0] == '/1/fader5') {
 		this.sendOscMessage('/1/toggle1', ['0']);
-		faderCount++;
-		this.faderObserver.next(faderCount)
+		this.observer.next({type: 'fader5', data: message[1]})
 	}
 }
 
@@ -45,8 +44,8 @@ Page1.prototype.toggle = function (message) {
 	}
 }
 
-Page1.prototype.registerFaderCount = function(){
-	return this.faderObservable;
+Page1.prototype.register = function(){
+	return this.observable;
 }
 
 module.exports = Page1
