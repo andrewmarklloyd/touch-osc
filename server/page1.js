@@ -32,10 +32,8 @@ Page1.prototype.sendOscMessage = function (address, messages) {
 }
 
 Page1.prototype.fader = function (message) {
-	if (message[0] == '/1/fader5') {
-		this.sendOscMessage('/1/toggle1', ['0']);
-		this.observer.next({type: 'fader5', data: message[1]})
-	}
+	const faderType = message[0].substring(3, message[0].length);
+	this.observer.next({type: faderType, data: message[1]})
 }
 
 Page1.prototype.toggle = function (message) {
