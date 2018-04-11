@@ -17,7 +17,7 @@ oscServer.on('message', function (message, rinfo) {
 		case '/4':
 			break;
 		case '/p':
-			console.log('ping')
+			//console.log('ping')
 			break;
 	}
 });
