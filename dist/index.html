@@ -38,6 +38,9 @@
   });
   socket.on('ping', function(ping) {
     console.log(ping)
+  });
+  socket.on('reload', function(){
+    window.location.reload();
   })
 
   // Setup faders

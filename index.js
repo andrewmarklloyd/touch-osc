@@ -16,3 +16,7 @@ osc.register().subscribe(data => {
 osc.registerPing().subscribe((ping) => {
 	io.emit('ping', ping);
 })
+
+osc.registerReload().subscribe(() => {
+	io.emit('reload');
+})
