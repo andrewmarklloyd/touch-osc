@@ -1,0 +1,12 @@
+version: '2'
+services:
+
+  # Backend Server and API
+  server:
+    restart: always
+    container_name: server
+    image: andrewlloyd/touch-osc:latest
+    working_dir: /app
+    build: .
+    ports:
+      - "3000:3000"
