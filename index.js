@@ -1,6 +1,3 @@
-// config should be imported before importing any other file
-const config = require('./config/config');
-const express = require('express');
 const { io } = require('./config/express');
 const OscInterface = require('./server/osc');
 const osc = new OscInterface();
